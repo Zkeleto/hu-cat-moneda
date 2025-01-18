@@ -1,0 +1,5 @@
+package com.huCatMoneda.entity;
+
+public class HuCatMonedaId implements  {
+
+}

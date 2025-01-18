@@ -1,0 +1,13 @@
+package com.huCatMoneda.service;
+
+public interface IHuCatMonedaService {
+	
+	public List<HuCatMoneda> getAllMonedas();
+    
+	public Optional<HuCatMoneda> getMonedaById(HuCatMonedaId id);
+    
+	public HuCatMoneda saveMoneda(HuCatMoneda huCatMoneda);
+    
+	public void deleteMoneda(HuCatMonedaId id);
+	
+}

@@ -1,0 +1,3 @@
+spring.application.name=HU-CAT-MONEDA
+
+server.port=8010

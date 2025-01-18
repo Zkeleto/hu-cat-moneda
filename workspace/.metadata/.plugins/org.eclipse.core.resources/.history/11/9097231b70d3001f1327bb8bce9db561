@@ -1,0 +1,35 @@
+package com.huCatMoneda.entity;
+
+import java.io.Serializable;
+
+import lombok.Data;
+
+@SuppressWarnings("serial")
+@Data
+public class HuCatMonedaId implements Serializable {
+
+	  private int numCia;
+	  private String claveMoneda;
+	  
+	  //Constructor vacío
+	  public HuCatMonedaId() {}
+
+	  // ✅ Constructor con parámetros (lo que falta en tu código)
+	  public HuCatMonedaId(int numCia, String claveMoneda) {
+		  this.numCia = numCia;
+	      this.claveMoneda = claveMoneda;
+	  }
+	  // ✅ Sobrescribir equals y hashCode para comparación de objetos
+	  @Override
+	  public boolean equals(Object o) {
+		  if (this == o) return true;
+	      	if (o == null || getClass() != o.getClass()) return false;
+	        HuCatMonedaId that = (HuCatMonedaId) o;
+	        return numCia == that.numCia && Objects.equals(claveMoneda, that.claveMoneda);
+	    }
+
+	    @Override
+	    public int hashCode() {
+	        return Objects.hash(numCia, claveMoneda);
+	    }
+}

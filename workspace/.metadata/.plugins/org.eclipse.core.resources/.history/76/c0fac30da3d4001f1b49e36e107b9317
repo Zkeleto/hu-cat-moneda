@@ -1,0 +1,16 @@
+spring.application.name=HU-CAT-MONEDA
+
+server.port=8010
+spring.datasource.url=jdbc:h2:mem:huCatMoneda_db
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+# Habilitar inicialización de datos en H2
+spring.jpa.defer-datasource-initialization=true
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format-sql=true
+spring.h2.console.enabled=true
+spring.h2.console.settings.trace=true
+logging.level.org.hibernate.sql=debug
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=trace

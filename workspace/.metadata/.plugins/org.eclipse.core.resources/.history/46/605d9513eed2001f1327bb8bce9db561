@@ -1,0 +1,10 @@
+package com.huCatMoneda.service;
+
+public interface IHuCatMonedaService {
+	
+	public List<HucatM> listaProductos();
+	public Productos registrar(Productos producto);
+	public void modificar(Productos producto);
+	public void eliminar(int sku);
+	
+}

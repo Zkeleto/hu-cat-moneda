@@ -1,0 +1,10 @@
+package com.huCatMoneda.entity;
+
+import java.io.Serializable;
+
+public class HuCatMonedaId implements Serializable {
+
+	  private int numCia;
+	    private String claveMoneda;
+	
+}

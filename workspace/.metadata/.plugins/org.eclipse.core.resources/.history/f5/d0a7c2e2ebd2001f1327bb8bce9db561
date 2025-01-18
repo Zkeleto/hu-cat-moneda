@@ -1,0 +1,11 @@
+package com.huCatMoneda.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.IdClass;
+import lombok.Data;
+@Entity
+@Data
+@IdClass(HuCatMonedaId.class) // Define la clave primaria compuesta
+public class HuCatMoneda {
+	
+}

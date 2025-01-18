@@ -1,0 +1,55 @@
+package com.huCatMoneda.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.huCatMoneda.entity.HuCatMoneda;
+import com.huCatMoneda.entity.HuCatMonedaId;
+import com.huCatMoneda.service.IHuCatMonedaService;
+
+@RestController
+@RequestMapping(path = "/api/v1/moneda")
+@CrossOrigin("*")
+public class HuCatMonedaWS {
+	
+	@Autowired
+	private IHuCatMonedaService service;
+	
+	// http://localhost:8010/api/v1/moneda
+	
+	//obtener la lista de monedas
+	@GetMapping
+	 public ResponseEntity<?> listar() {
+        List<HuCatMoneda> monedas = service.listar();
+        return ResponseEntity.ok(monedas);
+    }
+	
+	//obtener una moneda a traves de la llave compuesta
+	@GetMapping("/{numCia}/{claveMoneda}")
+    public ResponseEntity<HuCatMoneda> obtenerMoneda(@PathVariable int numCia, @PathVariable String claveMoneda) {
+		HuCatMonedaId id = new HuCatMonedaId(numCia, claveMoneda);
+		Optional<HuCatMoneda> moneda = service.editar(new HuCatMoneda(numCia, claveMoneda));
+		return moneda.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+	}
+	
+	//crear una moneda
+	@PostMapping
+    public ResponseEntity<HuCatMoneda> crearMoneda(@RequestBody HuCatMoneda moneda) {
+        HuCatMoneda nuevaMoneda = service.guardar(moneda);
+        return new ResponseEntity<>(nuevaMoneda, HttpStatus.CREATED);
+    }
+	
+	
+}

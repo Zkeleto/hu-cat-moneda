@@ -1,0 +1,14 @@
+package com.huCatMoneda.service;
+
+import java.util.List;
+
+import com.huCatMoneda.entity.HuCatMoneda;
+
+public interface IHuCatMonedaService {
+	
+	public List<HuCatMoneda> listar();
+	public void guardar(HuCatMoneda moneda);
+	public void editar(HuCatMoneda moneda);
+	public void eliminar(HuCatMoneda moneda);
+	
+}

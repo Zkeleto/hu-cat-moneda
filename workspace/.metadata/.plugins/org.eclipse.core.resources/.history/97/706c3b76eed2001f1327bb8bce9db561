@@ -1,0 +1,18 @@
+package com.huCatMoneda.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.huCatMoneda.entity.HuCatMoneda;
+
+@Service
+public class HuCatMonedaService {
+	
+	@Override
+	public List<HuCatMoneda> listarCatMonedas() {
+		
+		return dao.findAll(Sort.by(Sort.Direction.ASC,"sku"));
+	}
+	
+}

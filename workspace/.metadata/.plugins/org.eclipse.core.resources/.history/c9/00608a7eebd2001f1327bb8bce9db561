@@ -1,0 +1,17 @@
+package com.huCatMoneda.entity;
+
+import java.io.Serializable;
+
+import lombok.Data;
+
+@Data
+public class HuCatMonedaId implements Serializable {
+
+	  /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8132618315130616929L;
+	private int numCia;
+	  private String claveMoneda;
+	
+}

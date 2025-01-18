@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDITAR MONEDA</title>
+    <link rel="stylesheet" href="styleEdit.css" />
+</head>
+<body>
+    <div class="container">
+        <h2>EDITAR MONEDA</h2>
+        <form id="edit-form">        
+            <label for="numCia">Número de agencia:</label>
+            <input type="number" disabled id="numCia" placeholder="Número de agencia" maxlength="4"  />
+    
+            <label for="claveMoneda">Clave de la Moneda:</label>
+            <input type="text"  disabled id="claveMoneda" placeholder="Clave de la moneda (ej. MXN)" maxlength="3" required />
+        
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" placeholder="Descripción de la moneda" maxlength="30" required />
+        
+            <label for="simbolo">Símbolo:</label>
+            <input type="text" id="simbolo" placeholder="Símbolo de la moneda (ej. $)" maxlength="5" required />
+        
+            <label for="abreviacion">Abreviación:</label>
+            <input type="text" id="abreviacion" placeholder="Abreviación (ej. MXN)" maxlength="5" required />
+        
+            <label for="monedaCorriente">Moneda Corriente (Valores permitidos: S, N):</label>
+            <input type="text" id="monedaCorriente" placeholder="S o N" maxlength="1" required />
+        
+            <label for="status">Status (Valores permitidos: A, I):</label>
+            <input type="text" id="status" placeholder="A o I" maxlength="1" required />
+            <br>
+            <div class="buttons">
+                <button class="save-btn" type="button"  onclick="updateMoneda()">Actualizar</button>
+                <button class="cancel-btn" type="button" onclick="cancelEdit()">Cancelar</button>
+            </div>
+            
+            </div>
+        </form>
+    </div>
+    <script src="scriptEdit.js"></script>
+</body>
+</html>

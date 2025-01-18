@@ -1,0 +1,14 @@
+package com.huCatMoneda.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class HuCatMonedaService {
+	
+	@Override
+	public List<Productos> listaProductos() {
+		
+		return dao.findAll(Sort.by(Sort.Direction.ASC,"sku"));
+	}
+	
+}

@@ -1,0 +1,42 @@
+package com.huCatMoneda.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.huCatMoneda.dao.IHuCatMonedaDao;
+import com.huCatMoneda.entity.HuCatMoneda;
+
+@Service
+public class HuCatMonedaServiceImpl implements IHuCatMonedaService {
+	
+	@Autowired
+	private IHuCatMonedaDao dao;
+	
+	@Override
+	public List<HuCatMoneda> listar(){
+		
+		return dao.findAll(Sort.by(Sort.Direction.ASC,"numCia"));
+	}
+
+	@Override
+	public void guardar(HuCatMoneda moneda) {
+		dao.save(moneda);
+		
+	}
+
+	@Override
+	public void editar(HuCatMoneda moneda) {
+		dao.save(moneda);
+		
+	}
+
+	@Override
+	public void eliminar(HuCatMoneda moneda) {
+		
+		
+	}
+	
+}

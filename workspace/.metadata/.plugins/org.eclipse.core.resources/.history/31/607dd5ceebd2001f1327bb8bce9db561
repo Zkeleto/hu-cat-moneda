@@ -1,0 +1,9 @@
+package com.huCatMoneda.entity;
+
+import lombok.Data;
+
+@Data
+@
+public class HuCatMoneda {
+
+}
